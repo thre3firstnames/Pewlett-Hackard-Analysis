@@ -1,24 +1,22 @@
 -- Number of Retiring Employees by Title
--- From employeees, retrieve (emp_no, first_name, last_name)
--- From titles retrieve (title, from_date, to_date)
--- Create a new Table with INTO
--- Join the tables on the PK
--- filer data from the 'birth_date' column to retrieve employees born between 1952-1955
--- order by employee number
--- Export the retirement_titles table as retirement_titles.csv
+-- From employeees, retrieve (emp_no, first_name, last_name) - check
+-- From titles retrieve (title, from_date, to_date) - check
+-- Create a new Table with INTO -check
+-- Join the tables on the PK - check
+-- filer data from the 'birth_date' column to retrieve employees born between 1952-1955 - check
+-- order by employee number -- check
+-- Export the retirement_titles table as retirement_titles.csv -- check
 
 
-
-
-
--- SELECT ri.emp_no,
--- ri.first_name,
--- ri.last_name,
--- d.dept_name
--- -- INTO sales_dev_reitrees
--- FROM retirement_info as ri
--- INNER JOIN dept_emp AS de
--- ON (ri.emp_no = de.emp_no)
--- INNER JOIN departments AS d
--- ON (de.dept_no = d.dept_no)
--- WHERE d.dept_name IN ('Sales','Development');
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+	ti.title,
+	ti.from_date,
+	ti.to_date
+INTO retirement_titles
+FROM employees as e
+INNER JOIN titles AS ti
+ON (e.emp_no = ti.emp_no)
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+ORDER BY e.emp_no;
