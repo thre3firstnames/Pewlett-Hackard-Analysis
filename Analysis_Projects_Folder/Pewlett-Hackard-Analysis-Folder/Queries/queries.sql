@@ -234,18 +234,22 @@
 
 
 -- Return data relevant to the sales team from retirement_info
-SELECT ri.emp_no,
-ri.first_name,
-ri.last_name,
-d.dept_name
--- INTO sales_dev_reitrees
-FROM retirement_info as ri
-INNER JOIN dept_emp AS de
-ON (ri.emp_no = de.emp_no)
-INNER JOIN departments AS d
-ON (de.dept_no = d.dept_no)
-WHERE d.dept_name IN ('Sales','Development');
+-- SELECT ri.emp_no,
+-- ri.first_name,
+-- ri.last_name,
+-- d.dept_name
+-- -- INTO sales_dev_reitrees
+-- FROM retirement_info as ri
+-- INNER JOIN dept_emp AS de
+-- ON (ri.emp_no = de.emp_no)
+-- INNER JOIN departments AS d
+-- ON (de.dept_no = d.dept_no)
+-- WHERE d.dept_name IN ('Sales','Development');
 
 
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+e.first_name,
+e.last_name,
+e.birth
 
 
