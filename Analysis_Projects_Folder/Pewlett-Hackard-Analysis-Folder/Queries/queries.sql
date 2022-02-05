@@ -61,14 +61,14 @@
 
 -- DROP TABLE titles CASCADE;
 
--- CREATE TABLE titles (     
--- 	emp_no INT NOT NULL,
--- 	title VARCHAR NOT NULL,
--- 	from_date DATE NOT NULL,
--- 	to_date DATE NOT NULL,
--- 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
--- 	PRIMARY KEY (emp_no, title, from_date)
--- );
+CREATE TABLE titles (     
+	emp_no INT NOT NULL,
+	title VARCHAR NOT NULL,
+	from_date DATE NOT NULL,
+	to_date DATE NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+	PRIMARY KEY (emp_no, title, from_date)
+);
 
 
 -- SELECT first_name, last_name
@@ -250,6 +250,25 @@
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
 e.first_name,
 e.last_name,
-e.birth
+e.birth_date,
+de.from_date,
+de.to_date,
+ti.title
+FROM employees as e 
+INNER JOIN dept_emp as de
+ON de.emp_no = e.emp_no
+INNER JOIN titles as ti
+ON e.emp_no = ti.emp_no
+WHERE (de.to_date = '9999-01-01')
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY emp_no;
 
+CREATE TABLE titles (     
+	emp_no INT NOT NULL,
+	title VARCHAR NOT NULL,
+	from_date DATE NOT NULL,
+	to_date DATE NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+	PRIMARY KEY (emp_no, title, from_date)
+);
 
