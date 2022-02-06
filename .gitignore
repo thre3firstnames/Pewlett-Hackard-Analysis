@@ -1,5 +1,6 @@
 #Files to Ignore
 Practice_Files/
+/Analysis_Projects_Folder/Pewlett-Hackard-Analysis-Folder/Data/Non_Challenge_Data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
