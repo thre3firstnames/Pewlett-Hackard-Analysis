@@ -6,7 +6,7 @@ Provide PH with datasets built from their employee records that illustrate the n
  Provide a bulleted list with four major points from the two analysis deliverables. Use images as support where needed.
 - According to the data resulting from our examination of retiring employees, almost 25% of PH’s current workforce will be retiring soon. This is a staggering number even against PH’s large current employee total – **72,458 employees out of 300,024**.
 - Illustrated by the output pictured below, a majority (**70%**) of retiring employees hold *Senior* positions within PH.
-![retirement_titles.png](/Data/retirement_titles.png)
+![retirement_titles.png](/Analysis/retirement_titles.png)
 - In addition to the above observation, the number of managers among this generation is less than half of the total number of managers across PH. Interestingly, very few of those employees chose/were chosen to move up to managerial roles. 
 - We have no employee data (or, perhaps, none exists) for any hirings after January of 2000. This forces me to believe that we have only half of the whole picture. I find it odd that PH chose to exclude this data–its omission has likely skewed our analysis. 
 
